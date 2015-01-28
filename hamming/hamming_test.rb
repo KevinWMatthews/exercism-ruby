@@ -43,6 +43,26 @@ class HammingTest < MiniTest::Unit::TestCase
   def test_hamming_distance_in_very_long_strand
     assert_equal 9, Hamming.compute('GGACGGATTCTG', 'AGGACGGATTCT')
   end
+
+  def test_failure_if_unequal_strands
+    assert_equal -1, Hamming.compute('GA', 'G')
+  end
+
+  def test_invalid_base_in_small_first_strand
+    assert_equal -2, Hamming.compute('X', 'A')
+  end
+
+  def test_invalid_base_in_small_second_strand
+    assert_equal -2, Hamming.compute('A', 'X')
+  end
+
+  def test_invalid_base_in_large_first_strand
+    assert_equal -2, Hamming.compute('GGACGGATTCTX', 'AGGACGGATTCT')
+  end
+
+  def test_invalid_base_in_large_second_strand
+    assert_equal -2, Hamming.compute('GGACGGATTCTG', 'AGGACGGATTCX')
+  end
 end
 
 __END__
