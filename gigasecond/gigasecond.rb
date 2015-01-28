@@ -1,5 +1,7 @@
 class Gigasecond
   def self.from(date)
-    Date.new(2043, 1, 1)
+    #Add number of days in a gigasecond
+    #86400 seconds in a day
+    date = date + (10**9)/86400
   end
 end
