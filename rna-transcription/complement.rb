@@ -6,6 +6,8 @@ class Complement
       'C'
     elsif nucleotide == 'T'
       'A'
+    elsif nucleotide == 'A'
+      'U'
     end
   end
 end
