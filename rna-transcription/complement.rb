@@ -1,13 +1,17 @@
 class Complement
-  def self.of_dna(nucleotide)
-    if nucleotide == 'C'
-      'G'
-    elsif nucleotide == 'G'
-      'C'
-    elsif nucleotide == 'T'
-      'A'
-    elsif nucleotide == 'A'
-      'U'
+  def self.of_dna(strand)
+    complement = ""
+    strand.length.times do |i|
+      if strand[i] == 'C'
+        complement << 'G'
+      elsif strand[i] == 'G'
+        complement << 'C'
+      elsif strand[i] == 'T'
+        complement << 'A'
+      elsif strand[i] == 'A'
+        complement << 'U'
+      end
     end
+    complement
   end
 end
