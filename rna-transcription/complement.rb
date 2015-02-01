@@ -18,6 +18,8 @@ class Complement
   def self.of_rna(strand)
     if strand == 'C'
       'G'
+    elsif strand == 'G'
+      'C'
     end
   end
 end
