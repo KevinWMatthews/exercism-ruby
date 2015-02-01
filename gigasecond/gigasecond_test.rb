@@ -27,9 +27,8 @@ class GigasecondTest < MiniTest::Unit::TestCase
 
   # modify the test to test your 1 Gs anniversary
   def test_yourself
-    skip
-    your_birthday = Date.new(year, month, day)
+    your_birthday = Date.new(2000, 1, 1)
     gs = Gigasecond.from(your_birthday)
-    assert_equal Date.new(2009, 1, 31), gs
+    assert_equal Date.new(2031, 9, 9), gs
   end
 end
