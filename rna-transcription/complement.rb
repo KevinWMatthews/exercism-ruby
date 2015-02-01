@@ -1,33 +1,18 @@
 class Complement
+  # Hash containing DNA/RNA nucleotide pairings
+  DNA_RNA =
+  {
+    "C" => "G",
+    "G" => "C",
+    "T" => "A",
+    "A" => "U"
+  }
+
   def self.of_dna(strand)
-    complement = ""
-    strand.length.times do |i|
-      if strand[i] == 'C'
-        complement << 'G'
-      elsif strand[i] == 'G'
-        complement << 'C'
-      elsif strand[i] == 'T'
-        complement << 'A'
-      elsif strand[i] == 'A'
-        complement << 'U'
-      end
-    end
-    complement
+    strand.gsub /[CGTA]/, DNA_RNA
   end
 
   def self.of_rna(strand)
-    complement = ""
-    strand.length.times do |i|
-      if strand[i] == 'C'
-        complement << 'G'
-      elsif strand[i] == 'G'
-        complement << 'C'
-      elsif strand[i] == 'U'
-        complement << 'A'
-      elsif strand[i] == 'A'
-        complement << 'T'
-      end
-    end
-    complement
+    strand.gsub /[GCAU]/, DNA_RNA.invert
   end
 end
