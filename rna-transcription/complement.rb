@@ -20,6 +20,8 @@ class Complement
       'G'
     elsif strand == 'G'
       'C'
+    elsif strand == 'U'
+      'A'
     end
   end
 end

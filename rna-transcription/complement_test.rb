@@ -31,7 +31,6 @@ class ComplementTest < MiniTest::Unit::TestCase
   end
 
   def test_dna_complement_of_uracil_is_adenine
-    skip
     assert_equal 'A', Complement.of_rna('U')
   end
 
