@@ -4,6 +4,8 @@ class Complement
       'G'
     elsif nucleotide == 'G'
       'C'
+    elsif nucleotide == 'T'
+      'A'
     end
   end
 end
