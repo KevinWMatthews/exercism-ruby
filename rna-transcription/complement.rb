@@ -22,6 +22,8 @@ class Complement
       'C'
     elsif strand == 'U'
       'A'
+    elsif strand == 'A'
+      'T'
     end
   end
 end
