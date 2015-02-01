@@ -14,4 +14,10 @@ class Complement
     end
     complement
   end
+
+  def self.of_rna(strand)
+    if strand == 'C'
+      'G'
+    end
+  end
 end
