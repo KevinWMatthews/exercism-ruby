@@ -16,14 +16,18 @@ class Complement
   end
 
   def self.of_rna(strand)
-    if strand == 'C'
-      'G'
-    elsif strand == 'G'
-      'C'
-    elsif strand == 'U'
-      'A'
-    elsif strand == 'A'
-      'T'
+    complement = ""
+    strand.length.times do |i|
+      if strand[i] == 'C'
+        complement << 'G'
+      elsif strand[i] == 'G'
+        complement << 'C'
+      elsif strand[i] == 'U'
+        complement << 'A'
+      elsif strand[i] == 'A'
+        complement << 'T'
+      end
     end
+    complement
   end
 end
