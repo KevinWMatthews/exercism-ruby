@@ -1,5 +1,11 @@
 class Raindrops
   def self.convert(num)
-    num.to_s
+    rainspeak = ""
+    if (num % 3 == 0)
+      rainspeak = "Pling"
+    else
+      rainspeak = num.to_s
+    end
+    rainspeak
   end
 end
