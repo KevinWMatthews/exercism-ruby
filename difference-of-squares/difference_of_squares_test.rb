@@ -7,7 +7,6 @@ class SquaresTest < MiniTest::Unit::TestCase
   end
 
   def test_sum_of_squares_to_5
-    skip
     assert_equal 55, Squares.new(5).sum_of_squares
   end
 
