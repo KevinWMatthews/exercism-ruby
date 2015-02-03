@@ -1,21 +1,27 @@
 class Squares
   def initialize(integer)
     @integer = integer
+    @square_sum = 0
+    @sum_square = 0
   end
 
   def square_of_sums
-    sum = 0
     for i in 1..@integer
-      sum += i
+      @square_sum += i
     end
-    sum**2
+    @square_sum = @square_sum**2
   end
 
   def sum_of_squares
-    sum = 0
     for i in 1..@integer
-      sum += i**2
+      @sum_square += i**2
     end
-    sum
+    @sum_square
+  end
+
+  def difference
+    sum_of_squares
+    square_of_sums
+    @square_sum - @sum_square
   end
 end
