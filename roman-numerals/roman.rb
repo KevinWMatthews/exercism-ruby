@@ -9,6 +9,12 @@ class Integer
       "I"*3
     elsif (self == 4)
       "IV"
+    elsif (self == 5)
+      "V"
+    elsif (self == 6)
+      "VI"
+    elsif (self == 9)
+      "IX"
     end
   end
 end
