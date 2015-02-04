@@ -15,7 +15,6 @@ class RomanTest < MiniTest::Unit::TestCase
   end
 
   def test_4
-    skip
     assert_equal 'IV', 4.to_roman
   end
 
