@@ -31,7 +31,6 @@ class RomanTest < MiniTest::Unit::TestCase
   end
 
   def test_27
-    skip
     assert_equal 'XXVII', 27.to_roman
   end
 
