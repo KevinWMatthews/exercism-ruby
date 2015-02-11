@@ -9,6 +9,8 @@ class Integer
   def tens(arg)
     result = ""
     result += "X" * arg
+    result.gsub!(/XXXX/, "XL")
+    result
   end
 
   def ones(arg)
