@@ -12,6 +12,7 @@ class Integer
       result += "L"
     end
     result += "X" * (arg % 5)
+    result.gsub!(/LXXXX/, "XC")
     result.gsub!(/XXXX/, "XL")
     result
   end
