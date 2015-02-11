@@ -2,8 +2,18 @@
 class Integer
   def to_roman
     result = ""
+    #TODO use regular expressions to force it to split into a 1x4 array
+    digits = self.to_s.split ''
+    #Raise error if more than 4 digits!
+    result += hundreds(self/100)
     result += tens(self/10)
     result += ones(self%10)
+  end
+
+  def hundreds(arg)
+    result = ""
+    result += "C" * arg
+    result
   end
 
   def tens(arg)
@@ -24,8 +34,8 @@ class Integer
     end
     result += "I" * (arg % 5)
     #May be able to streamline this with more regex options
-    result.gsub!(/VIIII/, "IX")
     result.gsub!(/IIII/, "IV")
+    result.gsub!(/VIV/, "IX")
     result
   end
 end

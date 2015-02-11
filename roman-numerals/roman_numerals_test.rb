@@ -47,7 +47,6 @@ class RomanTest < MiniTest::Unit::TestCase
   end
 
   def test_141
-    skip
     assert_equal 'CXLI', 141.to_roman
   end
 
