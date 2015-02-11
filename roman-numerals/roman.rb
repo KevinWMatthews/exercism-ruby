@@ -2,10 +2,23 @@
 class Integer
   def to_roman
     result = ""
-    if (self >= 5)
+    result += tens(self/10)
+    result += ones(self%10)
+  end
+
+  def tens(arg)
+    result = ""
+    result += "X" * arg
+  end
+
+  def ones(arg)
+    result = ""
+    if (arg >= 5)
       result += "V"
     end
-    result += "I" * (self % 5)
+    result += "I" * (arg % 5)
+    #May be able to streamline this with more regex options
+    result.gsub!(/VIIII/, "IX")
     result.gsub!(/IIII/, "IV")
     result
   end
