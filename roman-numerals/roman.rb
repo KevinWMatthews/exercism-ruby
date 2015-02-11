@@ -8,7 +8,10 @@ class Integer
 
   def tens(arg)
     result = ""
-    result += "X" * arg
+    if (arg >= 5)
+      result += "L"
+    end
+    result += "X" * (arg % 5)
     result.gsub!(/XXXX/, "XL")
     result
   end
