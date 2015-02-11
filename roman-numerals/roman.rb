@@ -2,7 +2,7 @@
 class Integer
   def to_roman
     result = ""
-    if (self%5 == 0)
+    if (self >= 5)
       result += "V"
     end
     result += "I" * (self % 5)

@@ -23,7 +23,6 @@ class RomanTest < MiniTest::Unit::TestCase
   end
 
   def test_6
-    skip
     assert_equal 'VI', 6.to_roman
   end
 
