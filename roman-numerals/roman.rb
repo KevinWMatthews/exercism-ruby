@@ -2,21 +2,35 @@
 class Integer
   def to_roman
     result = ""
-    #TODO use regular expressions to force it to split into a 1x4 array
-    digits = self.to_s.split ''
-    #Raise error if more than 4 digits!
-    result += hundreds(self/100)
-    result += tens(self/10)
-    result += ones(self%10)
+
+    digits = self.to_s.chars.map(&:to_i)
+    result += convert(digits[1], "X", "L", "C")
+    result += convert(digits[0], "I", "V", "X")
+    # result += convert(digits[0], "I", "V", "X")
+  end
+
+  def convert(digit, smallRoman, midRoman, largeRoman)
+    if digit.nil?; return "" end
+    result = ""
+    if (digit >= 5)
+      result += midRoman
+    end
+    result += smallRoman * (digit % 5)
+    result.gsub!(/#{"#{smallRoman}"}*4/, "#{smallRoman}#{midRoman}")
+    result.gsub!(/#{"#{midRoman}#{smallRoman}#{midRoman}"}/, "#{smallRoman}#{largeRoman}")
+    result
   end
 
   def hundreds(arg)
+    if arg.nil?; return "" end
     result = ""
     result += "C" * arg
     result
   end
 
+  #rename arg to digit
   def tens(arg)
+    if arg.nil?; return "" end
     result = ""
     if (arg >= 5)
       result += "L"
@@ -28,6 +42,7 @@ class Integer
   end
 
   def ones(arg)
+    if arg.nil?; return "" end
     result = ""
     if (arg >= 5)
       result += "V"
