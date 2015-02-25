@@ -1,9 +1,8 @@
 class Robot
   attr_reader :name
   @@current_chars = "AA"
-  @@current_nums = "000"
 
   def initialize
-    @name = @@current_chars + @@current_nums
+    @name = @@current_chars + rand(1000).to_s
   end
 end
