@@ -52,22 +52,18 @@ class RomanTest < MiniTest::Unit::TestCase
   end
 
   def test_163
-    skip
     assert_equal 'CLXIII', 163.to_roman
   end
 
   def test_402
-    skip
     assert_equal 'CDII', 402.to_roman
   end
 
   def test_575
-    skip
     assert_equal 'DLXXV', 575.to_roman
   end
 
   def test_911
-    skip
     assert_equal 'CMXI', 911.to_roman
   end
 

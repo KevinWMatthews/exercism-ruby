@@ -5,7 +5,7 @@ class Integer
 
     digits = '%04i' % self
     digits = digits.chars.map(&:to_i)
-    # result += convert(digits[0], "I", "V", "X")
+    result += convert(digits[1], "C", "D", "M")
     result += convert(digits[2], "X", "L", "C")
     result += convert(digits[3], "I", "V", "X")
   end
