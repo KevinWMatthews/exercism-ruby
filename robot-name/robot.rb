@@ -6,7 +6,12 @@ class Robot
   end
 
   def random_name
-    random_char + random_char + rand(1000).to_s
+    random_char + random_char + random_number.to_s
+  end
+
+  def random_number
+    num = rand(999)
+    num = '%03i' % num
   end
 
   def random_char
