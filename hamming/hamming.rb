@@ -18,10 +18,6 @@ class Hamming
   end
 
   def self.isValidBase(base)
-    if (base == 'A' || base == 'C' || base == 'G' || base == 'T')
-      return TRUE
-    else
-      return FALSE
-    end
+    base == 'A' || base == 'C' || base == 'G' || base == 'T'
   end
 end
