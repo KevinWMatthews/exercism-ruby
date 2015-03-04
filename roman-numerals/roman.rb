@@ -1,25 +1,27 @@
-#Sweet! We can extend Ruby's built-in Integer class
 class Integer
   def to_roman
-    result = ""
-
-    digits = '%04i' % self
-    digits = digits.chars.map(&:to_i)
-    result += convert(digits[0], "M", "", "")
-    result += convert(digits[1], "C", "D", "M")
-    result += convert(digits[2], "X", "L", "C")
-    result += convert(digits[3], "I", "V", "X")
+    return '' unless self > 0
+    #Return the largest matching key-value pair
+    match = CONVERSION.detect { |roman, arabic| self >= arabic }
+    #Populate the result with a Roman Numeral match[0],
+    #and parse the remainder of the number
+    match[0] + (self - match[1]).to_roman
   end
 
-  def convert(digit, smallRoman, midRoman, largeRoman)
-    if digit.nil?; return "" end
-    result = ""
-    if (digit >= 5)
-      result += midRoman
-    end
-    result += smallRoman * (digit % 5)
-    result.gsub!(/#{"#{smallRoman}"*4}/, "#{smallRoman}#{midRoman}")
-    result.gsub!(/#{"#{midRoman}#{smallRoman}#{midRoman}"}/, "#{smallRoman}#{largeRoman}")
-    result
-  end
+  CONVERSION =
+  {
+    'M'  => 1000,
+    'CM' => 900,
+    'D'  => 500,
+    'CD' => 400,
+    'C'  => 100,
+    'XC' => 90,
+    'L'  => 50,
+    'XL' => 40,
+    'X'  => 10,
+    'IX' => 9,
+    'V'  => 5,
+    'IV' => 4,
+    'I'  => 1
+  }
 end
