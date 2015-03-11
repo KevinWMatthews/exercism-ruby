@@ -1,5 +1,9 @@
 class Prime
   def self.nth(num)
-    2
+    i=2
+    while (i % (i-1) != 0)
+      i += 1
+    end
+    i
   end
 end
