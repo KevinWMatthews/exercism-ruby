@@ -1,13 +1,25 @@
 class Prime
-  def self.nth(num)
-    i=1
-    match = 0
-    begin
-      i += 1
-      if (i % (i-1) == 0)
-        match += 1
+  def self.nth(n)
+    numToTest = 1
+    numMatches = 0
+    while (numMatches < n)
+      numToTest += 1
+      if (isPrime(numToTest) == true)
+        numMatches += 1
       end
-    end while (match < num)
-    i
+    end
+    numToTest
+  end
+
+  def self.isPrime(n)
+    isPrimeFlag = true
+    (2..(n-1)).each do |divisor|
+      puts ("#{n} % #{divisor} = #{n % divisor}")
+      if (n % divisor == 0)
+        isPrimeFlag = false
+        break
+      end
+    end
+    isPrimeFlag
   end
 end
