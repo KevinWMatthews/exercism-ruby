@@ -19,7 +19,6 @@ class TestPrimes < MiniTest::Unit::TestCase
   end
 
   def test_weird_case
-    skip
     assert_raises ArgumentError do
       Prime.nth(0)
     end
