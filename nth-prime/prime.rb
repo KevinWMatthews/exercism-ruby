@@ -1,8 +1,6 @@
 class Prime
   def self.nth(n)
-    if (n <= 0)
-      raise ArgumentError.new("Can't find the #{n}th prime")
-    end
+    raise ArgumentError.new("Can't find the #{n}th prime") if (n <= 0)
 
     primes = Array.new
     i = 2
