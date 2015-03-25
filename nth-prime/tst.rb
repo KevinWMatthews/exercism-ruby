@@ -1,5 +1,3 @@
-#Figure this out!
-
 class Prime
   include Enumerable
 
@@ -18,3 +16,22 @@ class Prime
     (2..Math.sqrt(i).to_i).none? { |divisor| i % divisor == 0 }
   end
 end
+
+
+
+puts Prime.nth(5)
+
+class MyClass
+  include Enumerable
+  def self.method
+    new.take(7).inspect
+  end
+
+  def each(&block)
+    (1..10).each do |i|
+      yield (i)
+    end
+  end
+end
+
+puts MyClass.method

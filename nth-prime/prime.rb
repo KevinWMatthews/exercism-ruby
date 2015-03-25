@@ -5,7 +5,7 @@ class Prime
     primes = Array.new
     i = 2
     until (primes.length == n)
-      if (isPrime(i))
+      if (prime?(i))
         primes << i
       end
       i += 1
@@ -13,15 +13,11 @@ class Prime
     return primes.last
   end
 
-  def self.isDivisible(dividend, divisor)
-    if (dividend % divisor == 0)
-      return true
-    else
-      return false
-    end
+  def self.divisible?(dividend, divisor)
+    return (dividend % divisor == 0)
   end
 
-  def self.isPrime(num)
+  def self.prime?(num)
 =begin
   WARNING! Mathematics ahead.
   Thus declares Wikipedia:
@@ -37,11 +33,11 @@ class Prime
     Thus we test until 6k-1 reaches sqrt(n).
 =end
     return num > 1 if num <= 3
-    return false if (isDivisible(num,2) || isDivisible(num,3))
+    return false if (divisible?(num,2) || divisible?(num,3))
 
     k = 1
     while ((6*k-1)**2 <= num) do
-      return false if (isDivisible(num,6*k+1) || isDivisible(num,6*k-1))
+      return false if (divisible?(num,6*k+1) || divisible?(num,6*k-1))
       k += 1
     end
 
