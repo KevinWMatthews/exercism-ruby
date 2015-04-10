@@ -29,7 +29,6 @@ class YearTest < MiniTest::Unit::TestCase
   end
 
   def test_fourth_century
-    skip
     assert Year.leap?(2400), 'Yes, 2400 is a leap year'
   end
 end
