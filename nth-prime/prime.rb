@@ -1,3 +1,5 @@
+require 'Math'
+
 class Prime
   def self.nth(n)
     raise ArgumentError.new("Can't find the #{n}th prime") if (n <= 0)
@@ -36,7 +38,10 @@ class Prime
     return false if (divisible?(num,2) || divisible?(num,3))
 
     k = 1
-    while ((6*k-1)**2 <= num) do
+    # loop while (6*k-1)**2 <= num, or
+    # k <= (1+sqrt(num)/6)
+    max_k = (1+Math.sqrt(num)/6)
+    while (k < max_k) do
       return false if (divisible?(num,6*k+1) || divisible?(num,6*k-1))
       k += 1
     end
