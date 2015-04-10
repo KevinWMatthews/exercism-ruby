@@ -32,7 +32,6 @@ class GrainsTest < Minitest::Test
   end
 
   def test_total_grains
-    skip
     assert_equal 18_446_744_073_709_551_615, Grains.new.total
   end
 end
