@@ -17,12 +17,10 @@ class YearTest < MiniTest::Unit::TestCase
   end
 
   def test_non_leap_year
-    skip
     refute Year.leap?(1997), 'No, 1997 is not a leap year'
   end
 
   def test_non_leap_even_year
-    skip
     refute Year.leap?(1998), 'No, 1998 is not a leap year'
   end
 
