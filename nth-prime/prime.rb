@@ -2,7 +2,7 @@ class Prime
   def self.nth(n)
     raise ArgumentError.new("Can't find the #{n}th prime") if (n <= 0)
 
-    primes = Array.new
+    primes = []
     i = 2
     until (primes.length == n)
       if (prime?(i))
@@ -10,18 +10,18 @@ class Prime
       end
       i += 1
     end
-    return primes.last
+    primes.last
   end
 
   def self.divisible?(dividend, divisor)
-    return (dividend % divisor == 0)
+    dividend % divisor == 0
   end
 
   def self.prime?(num)
 =begin
   WARNING! Mathematics ahead.
-  Thus declares Wikipedia:
-    All primes are of the form 6k+i or 6k-i, where i = -1, 0, 1, 2, 3, or 4
+  Thus declares Wikipedia (see Primality Test):
+    All primes are of the form 6k+i where i = -1, 0, 1, 2, 3, or 4
     6k+0, 6k+2, and 6k+4 are divisible by 2
     6k+3 is divisible by 3
     Thus we only test 2, 3, 6k-1, and 6k+1
@@ -41,6 +41,6 @@ class Prime
       k += 1
     end
 
-    return true
+    true
   end
 end
