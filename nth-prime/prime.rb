@@ -35,15 +35,9 @@ class Prime
     return num > 1 if num <= 3
     return false if (divisible?(num,2) || divisible?(num,3))
 
-    k = 1
-    # loop while (6*k-1)**2 <= num, or
-    # k <= (1+sqrt(num)/6)
+    # k <= (1+sqrt(num)/6) or
     max_k = (Math.sqrt(num)+1)/6.0
-    while (k <= max_k) do
-      return false if (divisible?(num,6*k+1) || divisible?(num,6*k-1))
-      k += 1
-    end
-
+    return false if (1..max_k).any? {|k| divisible?(num,6*k+1) || divisible?(num,6*k-1)}
     true
   end
 end
