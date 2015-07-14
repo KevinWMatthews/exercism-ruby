@@ -1,12 +1,14 @@
 class Phrase
-  attr_accessor :word_count
-
+  attr_accessor :word_array, :word_hash
   def initialize(string)
     @string = string
-    word_count = {}
+    word_array = []
   end
 
   def word_count
-    {'word' => 1}
+    word_array = @string.split(" ")
+
+    result = word_array.chunk { |w| word_array.count(w) }
+
   end
 end
