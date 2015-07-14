@@ -1,9 +1,9 @@
 class Hamming
-  def self.compute(strand1, strand2)
-    raise ArgumentError, "Strands are of unequal length" if strand1.length != strand2.length
+  def self.compute(original_strand, new_strand)
+    raise ArgumentError, "Strands are of unequal length" if original_strand.length != new_strand.length
 
-    all_bases1 = strand1.each_char
-    all_bases2 = strand2.each_char
-    all_bases1.zip(all_bases2).count {|base1, base2| base1 != base2}
+    orginal_bases = original_strand.each_char
+    new_bases = new_strand.each_char
+    orginal_bases.zip(new_bases).count {|original_base, new_base| original_base != new_base}
   end
 end
