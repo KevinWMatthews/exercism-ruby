@@ -103,13 +103,11 @@ class BobTest < Minitest::Test
   end
 
   def test_alternate_silences
-    skip
     remark = "\t" * rand(1..10)
     assert_equal 'Fine. Be that way!', bob.hey(remark), feedback(remark)
   end
 
   def test_on_multiple_line_questions
-    skip
     remark = %(
 Does this cryogenic chamber make me look fat?
 no)
