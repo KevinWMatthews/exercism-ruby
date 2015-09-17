@@ -65,7 +65,6 @@ class PhraseTest < Minitest::Test
   end
 
   def test_with_apostrophes
-    skip
     phrase = Phrase.new("First: don't laugh. Then: don't cry.")
     counts = {
       'first' => 1, "don't" => 2, 'laugh' => 1,
