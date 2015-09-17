@@ -1,5 +1,4 @@
-alphabet = Hash.new
-alphabet = ("A".."Z").map {|i| i}
+alphabet = Array("A".."Z")
 
 puts alphabet.inspect
 25.times {puts alphabet[rand(25)]}
