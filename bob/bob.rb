@@ -1,9 +1,8 @@
 class Bob
-  REMARKS = {
-    'Tom-ay-to, tom-aaaah-to.' => 'Whatever.',
-    'WATCH OUT!' => 'Whoa, chill out!'
-  }
   def hey(remark)
-    REMARKS[remark]
+    if remark.upcase == remark
+      return 'Whoa, chill out!'
+    end
+    'Whatever.'
   end
 end
