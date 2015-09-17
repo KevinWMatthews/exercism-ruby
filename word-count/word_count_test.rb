@@ -53,7 +53,6 @@ class PhraseTest < Minitest::Test
   end
 
   def test_include_numbers
-    skip
     phrase = Phrase.new('testing, 1, 2 testing')
     counts = { 'testing' => 2, '1' => 1, '2' => 1 }
     assert_equal counts, phrase.word_count
