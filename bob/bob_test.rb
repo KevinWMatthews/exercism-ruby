@@ -23,19 +23,16 @@ class BobTest < Minitest::Test
   end
 
   def test_shouting_gibberish
-    skip
     remark = ('A'..'Z').to_a.sample(10).join
     assert_equal 'Whoa, chill out!', bob.hey(remark), feedback(remark)
   end
 
   def test_asking_a_question
-    skip
     remark = 'Does this cryogenic chamber make me look fat?'
     assert_equal 'Sure.', bob.hey(remark), feedback(remark)
   end
 
   def test_asking_a_numeric_question
-    skip
     remark = 'You are, what, like 15?'
     assert_equal 'Sure.', bob.hey(remark), feedback(remark)
   end
