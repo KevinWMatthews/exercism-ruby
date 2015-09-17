@@ -4,10 +4,17 @@ class Bob
     string.upcase == string
   end
 
+  REMARKS = {
+    :shouting => 'Whoa, chill out!',
+    :question => 'Sure.',
+    :silence  => 'Fine. Be that way!',
+    :default  => 'Whatever.'
+  }
+
   def hey(remark)
-    return 'Whoa, chill out!' if is_uppercase(remark)
-    return 'Sure.' if remark[-1] == '?'
-    return 'Fine. Be that way!' if remark.strip.empty?
-    'Whatever.'
+    return REMARKS[:shouting] if is_uppercase(remark)
+    return REMARKS[:question] if remark[-1] == '?'
+    return REMARKS[:silence] if remark.strip.empty?
+    REMARKS[:default]
   end
 end
