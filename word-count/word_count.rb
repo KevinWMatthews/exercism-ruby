@@ -5,6 +5,10 @@ class Phrase
   end
 
   def word_count
-    {'word' => 1}
+    word_hash = Hash.new
+    phrase.split.each do |word|
+      word_hash[word] = 1
+    end
+    word_hash
   end
 end
