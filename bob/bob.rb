@@ -1,8 +1,6 @@
 class Bob
   def hey(remark)
-    if remark.upcase == remark
-      return 'Whoa, chill out!'
-    end
+    return 'Whoa, chill out!' if remark.upcase == remark
     return 'Sure.' if remark[-1] == '?'
     'Whatever.'
   end
