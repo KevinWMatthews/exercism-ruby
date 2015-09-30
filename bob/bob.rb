@@ -1,17 +1,32 @@
+class Prompt
+  attr_reader :prompt, :type
+  def initialize(prompt)
+    @prompt = prompt
+    @type   = get_prompt_type
+  end
+
+  def get_prompt_type
+    return :shouting if is_shouting?
+    return :question if is_question?
+    return :silence if is_silence?
+    :default
+  end
+
+  def is_shouting?
+    return false if prompt.downcase == prompt   #Occurs if string is all lowercase or all numeric
+    prompt.upcase == prompt
+  end
+
+  def is_question?
+    prompt[-1] == '?'
+  end
+
+  def is_silence?
+    prompt.strip.empty?
+  end
+end
+
 class Bob
-  def is_uppercase?(string)
-    return false if string.downcase == string   #Occurs if string is all lowercase or all numeric
-    string.upcase == string
-  end
-
-  def is_question?(string)
-    string[-1] == '?'
-  end
-
-  def is_silence?(string)
-    string.strip.empty?
-  end
-
   REMARKS = {
     :shouting => 'Whoa, chill out!',
     :question => 'Sure.',
@@ -19,10 +34,8 @@ class Bob
     :default  => 'Whatever.'
   }
 
-  def hey(remark)
-    return REMARKS[:shouting] if is_uppercase?(remark)
-    return REMARKS[:question] if is_question?(remark)
-    return REMARKS[:silence]  if is_silence?(remark)
-    REMARKS[:default]
+  def hey(input)
+    prompt = Prompt.new(input)
+    REMARKS[prompt.type]
   end
 end
