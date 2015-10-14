@@ -36,7 +36,7 @@ class FoodChainTest < Minitest::Test
       "I know an old lady who swallowed a fly.",
       "I don't know why she swallowed the fly. Perhaps she'll die."
     ]
-    assert_equal(expected, FoodChain.fly)
+    assert_equal(expected, Fly.message)
   end
 
   def test_second_verse_spider
@@ -46,7 +46,7 @@ class FoodChainTest < Minitest::Test
       "She swallowed the spider to catch the fly.",
       "I don't know why she swallowed the fly. Perhaps she'll die."
     ]
-    assert_equal(expected, FoodChain.spider)
+    assert_equal(expected, Spider.message)
   end
 
   def test_third_verse_bird
@@ -57,7 +57,7 @@ class FoodChainTest < Minitest::Test
       "She swallowed the spider to catch the fly.",
       "I don't know why she swallowed the fly. Perhaps she'll die."
     ]
-    assert_equal(expected, FoodChain.bird)
+    assert_equal(expected, Bird.message)
   end
 
   def test_fourth_verse_cat
@@ -69,7 +69,7 @@ class FoodChainTest < Minitest::Test
       "She swallowed the spider to catch the fly.",
       "I don't know why she swallowed the fly. Perhaps she'll die."
     ]
-    assert_equal(expected, FoodChain.cat)
+    assert_equal(expected, Cat.message)
   end
 
   # Tests that an error is effectively raised when IO.read or

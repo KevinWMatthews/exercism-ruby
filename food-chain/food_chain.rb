@@ -94,20 +94,4 @@ end
 class FoodChain
   def self.song
   end
-
-  def self.fly
-    Fly.message
-  end
-
-  def self.spider
-    Spider.message
-  end
-
-  def self.bird
-    Bird.message
-  end
-
-  def self.cat
-    Cat.message
-  end
 end
