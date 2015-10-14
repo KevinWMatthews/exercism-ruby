@@ -1,4 +1,13 @@
 class Animal
+  def self.message
+    output = []
+    output << self.intro
+    output << self.remark
+    output << self.swallow_what_now
+    output << self.outro
+    output.compact.flatten
+  end
+
   def self.intro
     "I know an old lady who swallowed a "
   end
@@ -16,6 +25,12 @@ end
 class Fly < Animal
   def self.intro
     super + "fly."
+  end
+
+  def self.remark
+  end
+
+  def self.swallow_what_now
   end
 end
 
@@ -43,7 +58,9 @@ class Bird < Animal
   end
 
   def self.swallow_what_now
-    super('bird', 'spider').chomp('.') + " that wriggled and jiggled and tickled inside her."
+    output = []
+    output << super('bird', 'spider').chomp('.') + " that wriggled and jiggled and tickled inside her."
+    output << Spider.swallow_what_now
   end
 end
 
@@ -57,7 +74,9 @@ class Cat < Animal
   end
 
   def self.swallow_what_now
-    super('cat', 'bird')
+    output = []
+    output << super('cat', 'bird')
+    output << Bird.swallow_what_now
   end
 end
 
@@ -66,39 +85,18 @@ class FoodChain
   end
 
   def self.fly
-    [
-      Fly.intro,
-      Fly.outro
-    ]
+    Fly.message
   end
 
   def self.spider
-    [
-      Spider.intro,
-      Spider.remark,
-      Spider.swallow_what_now,
-      Spider.outro
-    ]
+    Spider.message
   end
 
   def self.bird
-    [
-      Bird.intro,
-      Bird.remark,
-      Bird.swallow_what_now,
-      Spider.swallow_what_now,
-      Bird.outro
-    ]
+    Bird.message
   end
 
   def self.cat
-    [
-      Cat.intro,
-      Cat.remark,
-      Cat.swallow_what_now,
-      Bird.swallow_what_now,
-      Spider.swallow_what_now,
-      Cat.outro
-    ]
+    Cat.message
   end
 end
