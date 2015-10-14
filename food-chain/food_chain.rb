@@ -9,7 +9,7 @@ class Animal
   end
 
   def self.intro
-    "I know an old lady who swallowed a #{self.name.downcase}."
+    "I know an old lady who swallowed a #{name}."
   end
 
   def self.outro
