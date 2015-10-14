@@ -8,8 +8,8 @@ class Animal
     output.compact.flatten
   end
 
-  def self.intro
-    "I know an old lady who swallowed a "
+  def self.intro(name)
+    "I know an old lady who swallowed a #{name}."
   end
 
   def self.outro
@@ -28,7 +28,7 @@ class Fly < Animal
   end
 
   def self.intro
-    super + self.name + "."
+    super(self.name)
   end
 
   def self.remark
@@ -44,7 +44,7 @@ class Spider < Animal
   end
 
   def self.intro
-    super + self.name + "."
+    super(self.name)
   end
 
   def self.remark
@@ -62,7 +62,7 @@ class Bird < Animal
   end
 
   def self.intro
-    super + self.name + "."
+    super(self.name)
   end
 
   def self.remark
@@ -82,7 +82,7 @@ class Cat < Animal
   end
 
   def self.intro
-    super + self.name + "."
+    super(self.name)
   end
 
   def self.remark
