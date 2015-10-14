@@ -1,3 +1,6 @@
+#Can rewrite swallow_what_now to handle recursion better
+#Might even be able to get the outro hooked up to it.
+
 class Animal
   def self.message
     output = []
