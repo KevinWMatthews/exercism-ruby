@@ -8,7 +8,7 @@ class Animal
     output << remark
     output << swallow_what_now
     output << outro
-    output.compact.flatten
+    output.flatten.compact
   end
 
   def self.intro
@@ -28,7 +28,6 @@ class Animal
     output = []
     output << she_swallowed(name) + next_in_food_chain.name + "."
     output << next_in_food_chain.swallow_what_now
-    output.compact
   end
 end
 
