@@ -49,6 +49,29 @@ class FoodChainTest < Minitest::Test
     assert_equal(expected, FoodChain.spider)
   end
 
+  def test_third_verse_bird
+    expected = [
+      "I know an old lady who swallowed a bird.",
+      "How absurd to swallow a bird!",
+      "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.",
+      "She swallowed the spider to catch the fly.",
+      "I don't know why she swallowed the fly. Perhaps she'll die."
+    ]
+    assert_equal(expected, FoodChain.bird)
+  end
+
+  def test_fourth_verse_cat
+    expected = [
+      "I know an old lady who swallowed a cat.",
+      "Imagine that, to swallow a cat!",
+      "She swallowed the cat to catch the bird.",
+      "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.",
+      "She swallowed the spider to catch the fly.",
+      "I don't know why she swallowed the fly. Perhaps she'll die."
+    ]
+    assert_equal(expected, FoodChain.cat)
+  end
+
   # Tests that an error is effectively raised when IO.read or
   # File.open are used within FoodChain.
   def test_read_guard
