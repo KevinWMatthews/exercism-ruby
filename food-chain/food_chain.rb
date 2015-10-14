@@ -23,8 +23,12 @@ class Animal
 end
 
 class Fly < Animal
+  def self.name
+    "fly."
+  end
+
   def self.intro
-    super + "fly."
+    super + self.name
   end
 
   def self.remark
@@ -35,8 +39,12 @@ class Fly < Animal
 end
 
 class Spider < Animal
+  def self.name
+    "spider."
+  end
+
   def self.intro
-    super + "spider."
+    super + self.name
   end
 
   def self.remark
@@ -49,8 +57,12 @@ class Spider < Animal
 end
 
 class Bird < Animal
+  def self.name
+    "bird."
+  end
+
   def self.intro
-    super + "bird."
+    super + self.name
   end
 
   def self.remark
@@ -65,8 +77,12 @@ class Bird < Animal
 end
 
 class Cat < Animal
+  def self.name
+    "cat."
+  end
+
   def self.intro
-    super + "cat."
+    super + self.name
   end
 
   def self.remark
