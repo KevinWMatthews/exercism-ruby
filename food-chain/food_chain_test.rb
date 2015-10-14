@@ -35,7 +35,7 @@ class FoodChainTest < Minitest::Test
       "I don't know why she swallowed the fly. Perhaps she'll die.",
       ""
     ]
-    assert_equal(expected, Fly.message)
+    assert_equal(expected, Fly.new.message)
   end
 
   def test_second_verse_spider
@@ -46,7 +46,7 @@ class FoodChainTest < Minitest::Test
       "I don't know why she swallowed the fly. Perhaps she'll die.",
       ""
     ]
-    assert_equal(expected, Spider.message)
+    assert_equal(expected, Spider.new.message)
   end
 
   def test_third_verse_bird
@@ -58,7 +58,7 @@ class FoodChainTest < Minitest::Test
       "I don't know why she swallowed the fly. Perhaps she'll die.",
       ""
     ]
-    assert_equal(expected, Bird.message)
+    assert_equal(expected, Bird.new.message)
   end
 
   def test_fourth_verse_cat
@@ -71,7 +71,7 @@ class FoodChainTest < Minitest::Test
       "I don't know why she swallowed the fly. Perhaps she'll die.",
       ""
     ]
-    assert_equal(expected, Cat.message)
+    assert_equal(expected, Cat.new.message)
   end
 
   def test_fifth_verse_dog
@@ -85,7 +85,7 @@ class FoodChainTest < Minitest::Test
       "I don't know why she swallowed the fly. Perhaps she'll die.",
       ""
     ]
-    assert_equal(expected, Dog.message)
+    assert_equal(expected, Dog.new.message)
   end
 
   def test_sixth_verse_goat
@@ -100,7 +100,7 @@ class FoodChainTest < Minitest::Test
       "I don't know why she swallowed the fly. Perhaps she'll die.",
       ""
     ]
-    assert_equal(expected, Goat.message)
+    assert_equal(expected, Goat.new.message)
   end
 
   def test_seventh_verse_cow
@@ -116,7 +116,7 @@ class FoodChainTest < Minitest::Test
       "I don't know why she swallowed the fly. Perhaps she'll die.",
       ""
     ]
-    assert_equal(expected, Cow.message)
+    assert_equal(expected, Cow.new.message)
   end
 
   def test_eighth_verse_horse
@@ -125,7 +125,7 @@ class FoodChainTest < Minitest::Test
       "She's dead, of course!",
       ""
     ]
-    assert_equal(expected, Horse.message)
+    assert_equal(expected, Horse.new.message)
   end
 
   # Tests that an error is effectively raised when IO.read or
