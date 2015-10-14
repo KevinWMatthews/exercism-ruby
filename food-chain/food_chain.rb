@@ -17,18 +17,18 @@ class Animal
   end
 
   #private?
-  def self.swallow_what_now(predator, prey)
-    "She swallowed the #{predator} to catch the #{prey}."
+  def self.swallow_what_now(name)
+    "She swallowed the #{name} to catch the "
   end
 end
 
 class Fly < Animal
   def self.name
-    "fly."
+    "fly"
   end
 
   def self.intro
-    super + self.name
+    super + self.name + "."
   end
 
   def self.remark
@@ -40,11 +40,11 @@ end
 
 class Spider < Animal
   def self.name
-    "spider."
+    "spider"
   end
 
   def self.intro
-    super + self.name
+    super + self.name + "."
   end
 
   def self.remark
@@ -52,17 +52,17 @@ class Spider < Animal
   end
 
   def self.swallow_what_now
-    super('spider', 'fly')
+    super(self.name) + Fly.name + "."
   end
 end
 
 class Bird < Animal
   def self.name
-    "bird."
+    "bird"
   end
 
   def self.intro
-    super + self.name
+    super + self.name + "."
   end
 
   def self.remark
@@ -71,18 +71,18 @@ class Bird < Animal
 
   def self.swallow_what_now
     output = []
-    output << super('bird', 'spider').chomp('.') + " that wriggled and jiggled and tickled inside her."
+    output << super(self.name) + Spider.name + " that wriggled and jiggled and tickled inside her."
     output << Spider.swallow_what_now
   end
 end
 
 class Cat < Animal
   def self.name
-    "cat."
+    "cat"
   end
 
   def self.intro
-    super + self.name
+    super + self.name + "."
   end
 
   def self.remark
@@ -91,7 +91,7 @@ class Cat < Animal
 
   def self.swallow_what_now
     output = []
-    output << super('cat', 'bird')
+    output << super(self.name) + Bird.name + "."
     output << Bird.swallow_what_now
   end
 end
