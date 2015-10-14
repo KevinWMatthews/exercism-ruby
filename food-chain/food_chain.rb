@@ -106,6 +106,18 @@ class Cow < Animal
   end
 end
 
+class Horse < Animal
+  def self.remark
+  end
+
+  def self.swallow_series
+  end
+
+  def self.outro
+    "She's dead, of course!"
+  end
+end
+
 class FoodChain
   def self.song
   end

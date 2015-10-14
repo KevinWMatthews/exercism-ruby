@@ -114,6 +114,14 @@ class FoodChainTest < Minitest::Test
     assert_equal(expected, Cow.message)
   end
 
+  def test_eighth_verse_horse
+    expected = [
+      "I know an old lady who swallowed a horse.",
+      "She's dead, of course!"
+    ]
+    assert_equal(expected, Horse.message)
+  end
+
   # Tests that an error is effectively raised when IO.read or
   # File.open are used within FoodChain.
   def test_read_guard
