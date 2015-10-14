@@ -1,26 +1,35 @@
 class Animal
+  def self.intro
+    "I know an old lady who swallowed a "
+  end
+
   def self.outro
     "I don't know why she swallowed the fly. Perhaps she'll die."
+  end
+
+  #private?
+  def self.swallow_what_now(predator, prey)
+    "She swallowed the #{predator} to catch the #{prey}."
   end
 end
 
 class Fly < Animal
-  def self.swallow
-    "I know an old lady who swallowed a fly."
+  def self.intro
+    super + "fly."
   end
 end
 
 class Spider < Animal
-  def self.swallow
-    "I know an old lady who swallowed a spider."
+  def self.intro
+    super + "spider."
   end
 
   def self.remark
     "It wriggled and jiggled and tickled inside her."
   end
 
-  def self.chase
-    "She swallowed the spider to catch the fly."
+  def self.swallow_what_now
+    super('spider', 'fly')
   end
 end
 
@@ -30,16 +39,16 @@ class FoodChain
 
   def self.fly
     [
-      Fly.swallow,
+      Fly.intro,
       Fly.outro
     ]
   end
 
   def self.spider
     [
-      Spider.swallow,
+      Spider.intro,
       Spider.remark,
-      Spider.chase,
+      Spider.swallow_what_now,
       Spider.outro
     ]
   end
