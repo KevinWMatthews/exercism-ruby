@@ -4,10 +4,10 @@
 class Animal
   def self.message
     output = []
-    output << self.intro
-    output << self.remark
-    output << self.swallow_what_now
-    output << self.outro
+    output << intro
+    output << remark
+    output << swallow_what_now
+    output << outro
     output.compact.flatten
   end
 
@@ -20,8 +20,15 @@ class Animal
   end
 
   #private?
-  def self.swallow_what_now(name)
+  def self.she_swallowed(name)
     "She swallowed the #{name} to catch the "
+  end
+
+  def self.swallow_what_now
+    output = []
+    output << she_swallowed(name) + next_in_food_chain.name + "."
+    output << next_in_food_chain.swallow_what_now
+    output.compact
   end
 end
 
@@ -42,12 +49,12 @@ class Spider < Animal
     "spider"
   end
 
-  def self.remark
-    "It wriggled and jiggled and tickled inside her."
+  def self.next_in_food_chain
+    Fly
   end
 
-  def self.swallow_what_now
-    super(self.name) + Fly.name + "."
+  def self.remark
+    "It wriggled and jiggled and tickled inside her."
   end
 end
 
@@ -56,14 +63,18 @@ class Bird < Animal
     "bird"
   end
 
+  def self.next_in_food_chain
+    Spider
+  end
+
   def self.remark
     "How absurd to swallow a bird!"
   end
 
   def self.swallow_what_now
     output = []
-    output << super(self.name) + Spider.name + " that wriggled and jiggled and tickled inside her."
-    output << Spider.swallow_what_now
+    output << she_swallowed(name) + next_in_food_chain.name + " that wriggled and jiggled and tickled inside her."
+    output << next_in_food_chain.swallow_what_now
   end
 end
 
@@ -72,14 +83,12 @@ class Cat < Animal
     "cat"
   end
 
-  def self.remark
-    "Imagine that, to swallow a cat!"
+  def self.next_in_food_chain
+    Bird
   end
 
-  def self.swallow_what_now
-    output = []
-    output << super(self.name) + Bird.name + "."
-    output << Bird.swallow_what_now
+  def self.remark
+    "Imagine that, to swallow a cat!"
   end
 end
 
