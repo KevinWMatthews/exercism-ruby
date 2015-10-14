@@ -22,6 +22,7 @@ class FoodChainTest < Minitest::Test
   # to make sure you got it right.
   # There's no need to submit the tests you write, unless you
   # specifically want feedback on them.
+
   def test_the_whole_song
     skip
     song_file = File.expand_path('../song.txt', __FILE__)
@@ -35,6 +36,16 @@ class FoodChainTest < Minitest::Test
       "I don't know why she swallowed the fly. Perhaps she'll die."
     ]
     assert_equal(expected, FoodChain.fly)
+  end
+
+  def test_second_verse_spider
+    expected = [
+      "I know an old lady who swallowed a spider.",
+      "It wriggled and jiggled and tickled inside her.",
+      "She swallowed the spider to catch the fly.",
+      "I don't know why she swallowed the fly. Perhaps she'll die."
+    ]
+    assert_equal(expected, FoodChain.spider)
   end
 
   # Tests that an error is effectively raised when IO.read or
