@@ -9,7 +9,7 @@ class Animal
   end
 
   def self.intro
-    "I know an old lady who swallowed a #{self.name}."
+    "I know an old lady who swallowed a #{self.name.downcase}."
   end
 
   def self.outro
@@ -18,21 +18,21 @@ class Animal
 
   def self.swallow_series
     output = []
-    output << she_swallowed(name) + next_in_food_chain.name + "."
+    output << she_swallowed + next_in_food_chain.name + "."
     output << next_in_food_chain.swallow_series
   end
 
+  def self.name
+    super.downcase
+  end
+
   private
-  def self.she_swallowed(name)
+  def self.she_swallowed
     "She swallowed the #{name} to catch the "
   end
 end
 
 class Fly < Animal
-  def self.name
-    "fly"
-  end
-
   def self.remark
   end
 
@@ -41,10 +41,6 @@ class Fly < Animal
 end
 
 class Spider < Animal
-  def self.name
-    "spider"
-  end
-
   def self.next_in_food_chain
     Fly
   end
@@ -55,10 +51,6 @@ class Spider < Animal
 end
 
 class Bird < Animal
-  def self.name
-    "bird"
-  end
-
   def self.next_in_food_chain
     Spider
   end
@@ -69,16 +61,12 @@ class Bird < Animal
 
   def self.swallow_series
     output = []
-    output << she_swallowed(name) + next_in_food_chain.name + " that wriggled and jiggled and tickled inside her."
+    output << she_swallowed + next_in_food_chain.name + " that wriggled and jiggled and tickled inside her."
     output << next_in_food_chain.swallow_series
   end
 end
 
 class Cat < Animal
-  def self.name
-    "cat"
-  end
-
   def self.next_in_food_chain
     Bird
   end
@@ -89,16 +77,22 @@ class Cat < Animal
 end
 
 class Dog < Animal
-  def self.name
-    "dog"
-  end
-
   def self.next_in_food_chain
     Cat
   end
 
   def self.remark
     "What a hog, to swallow a dog!"
+  end
+end
+
+class Goat < Animal
+  def self.next_in_food_chain
+    Dog
+  end
+
+  def self.remark
+    "Just opened her throat and swallowed a goat!"
   end
 end
 
