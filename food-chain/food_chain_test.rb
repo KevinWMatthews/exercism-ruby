@@ -23,18 +23,17 @@ class FoodChainTest < Minitest::Test
   # There's no need to submit the tests you write, unless you
   # specifically want feedback on them.
 
-  #TODO reimplement this integration test
-  # def test_the_whole_song
-  #   skip
-  #   song_file = File.expand_path('../song.txt', __FILE__)
-  #   expected  = IO.read(song_file)
-  #   assert_equal expected, FoodChain.song
-  # end
+  def test_the_whole_song
+    song_file = File.expand_path('../song.txt', __FILE__)
+    expected  = IO.read(song_file)
+    assert_equal expected, FoodChain.song
+  end
 
   def test_first_verse_fly
     expected = [
       "I know an old lady who swallowed a fly.",
-      "I don't know why she swallowed the fly. Perhaps she'll die."
+      "I don't know why she swallowed the fly. Perhaps she'll die.",
+      ""
     ]
     assert_equal(expected, Fly.message)
   end
@@ -44,7 +43,8 @@ class FoodChainTest < Minitest::Test
       "I know an old lady who swallowed a spider.",
       "It wriggled and jiggled and tickled inside her.",
       "She swallowed the spider to catch the fly.",
-      "I don't know why she swallowed the fly. Perhaps she'll die."
+      "I don't know why she swallowed the fly. Perhaps she'll die.",
+      ""
     ]
     assert_equal(expected, Spider.message)
   end
@@ -55,7 +55,8 @@ class FoodChainTest < Minitest::Test
       "How absurd to swallow a bird!",
       "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.",
       "She swallowed the spider to catch the fly.",
-      "I don't know why she swallowed the fly. Perhaps she'll die."
+      "I don't know why she swallowed the fly. Perhaps she'll die.",
+      ""
     ]
     assert_equal(expected, Bird.message)
   end
@@ -67,7 +68,8 @@ class FoodChainTest < Minitest::Test
       "She swallowed the cat to catch the bird.",
       "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.",
       "She swallowed the spider to catch the fly.",
-      "I don't know why she swallowed the fly. Perhaps she'll die."
+      "I don't know why she swallowed the fly. Perhaps she'll die.",
+      ""
     ]
     assert_equal(expected, Cat.message)
   end
@@ -80,7 +82,8 @@ class FoodChainTest < Minitest::Test
       "She swallowed the cat to catch the bird.",
       "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.",
       "She swallowed the spider to catch the fly.",
-      "I don't know why she swallowed the fly. Perhaps she'll die."
+      "I don't know why she swallowed the fly. Perhaps she'll die.",
+      ""
     ]
     assert_equal(expected, Dog.message)
   end
@@ -94,7 +97,8 @@ class FoodChainTest < Minitest::Test
       "She swallowed the cat to catch the bird.",
       "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.",
       "She swallowed the spider to catch the fly.",
-      "I don't know why she swallowed the fly. Perhaps she'll die."
+      "I don't know why she swallowed the fly. Perhaps she'll die.",
+      ""
     ]
     assert_equal(expected, Goat.message)
   end
@@ -109,7 +113,8 @@ class FoodChainTest < Minitest::Test
       "She swallowed the cat to catch the bird.",
       "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.",
       "She swallowed the spider to catch the fly.",
-      "I don't know why she swallowed the fly. Perhaps she'll die."
+      "I don't know why she swallowed the fly. Perhaps she'll die.",
+      ""
     ]
     assert_equal(expected, Cow.message)
   end
@@ -117,7 +122,8 @@ class FoodChainTest < Minitest::Test
   def test_eighth_verse_horse
     expected = [
       "I know an old lady who swallowed a horse.",
-      "She's dead, of course!"
+      "She's dead, of course!",
+      ""
     ]
     assert_equal(expected, Horse.message)
   end

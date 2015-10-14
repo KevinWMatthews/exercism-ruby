@@ -13,7 +13,9 @@ class Animal
   end
 
   def self.outro
-    "I don't know why she swallowed the fly. Perhaps she'll die."
+    output = []
+    output << "I don't know why she swallowed the fly. Perhaps she'll die."
+    output << ""
   end
 
   def self.swallow_series
@@ -114,11 +116,23 @@ class Horse < Animal
   end
 
   def self.outro
-    "She's dead, of course!"
+    output = []
+    output << "She's dead, of course!"
+    output << ""
   end
 end
 
 class FoodChain
   def self.song
+    output = []
+    output << Fly.message
+    output << Spider.message
+    output << Bird.message
+    output << Cat.message
+    output << Dog.message
+    output << Goat.message
+    output << Cow.message
+    output << Horse.message
+    output.flatten.join("\n")
   end
 end
