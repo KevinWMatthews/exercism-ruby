@@ -88,6 +88,20 @@ class Cat < Animal
   end
 end
 
+class Dog < Animal
+  def self.name
+    "dog"
+  end
+
+  def self.next_in_food_chain
+    Cat
+  end
+
+  def self.remark
+    "What a hog, to swallow a dog!"
+  end
+end
+
 class FoodChain
   def self.song
   end
