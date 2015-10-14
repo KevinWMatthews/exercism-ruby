@@ -123,16 +123,15 @@ class Horse < Animal
 end
 
 class FoodChain
+  def self.song_order
+    [Fly, Spider, Bird, Cat, Dog, Goat, Cow, Horse]
+  end
+
   def self.song
     output = []
-    output << Fly.new.message
-    output << Spider.new.message
-    output << Bird.new.message
-    output << Cat.new.message
-    output << Dog.new.message
-    output << Goat.new.message
-    output << Cow.new.message
-    output << Horse.new.message
+    song_order.each do |animal|
+      output << animal.new.message
+    end
     output.flatten.join("\n")
   end
 end
