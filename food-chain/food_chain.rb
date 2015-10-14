@@ -96,6 +96,16 @@ class Goat < Animal
   end
 end
 
+class Cow < Animal
+  def self.next_in_food_chain
+    Goat
+  end
+
+  def self.remark
+    "I don't know how she swallowed a cow!"
+  end
+end
+
 class FoodChain
   def self.song
   end

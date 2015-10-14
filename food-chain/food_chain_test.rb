@@ -99,6 +99,21 @@ class FoodChainTest < Minitest::Test
     assert_equal(expected, Goat.message)
   end
 
+  def test_seventh_verse_cow
+    expected = [
+      "I know an old lady who swallowed a cow.",
+      "I don't know how she swallowed a cow!",
+      "She swallowed the cow to catch the goat.",
+      "She swallowed the goat to catch the dog.",
+      "She swallowed the dog to catch the cat.",
+      "She swallowed the cat to catch the bird.",
+      "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.",
+      "She swallowed the spider to catch the fly.",
+      "I don't know why she swallowed the fly. Perhaps she'll die."
+    ]
+    assert_equal(expected, Cow.message)
+  end
+
   # Tests that an error is effectively raised when IO.read or
   # File.open are used within FoodChain.
   def test_read_guard
