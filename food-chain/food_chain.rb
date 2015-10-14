@@ -33,6 +33,20 @@ class Spider < Animal
   end
 end
 
+class Bird < Animal
+  def self.intro
+    super + "bird."
+  end
+
+  def self.remark
+    "How absurd to swallow a bird!"
+  end
+
+  def self.swallow_what_now
+    super('bird', 'spider').chomp('.') + " that wriggled and jiggled and tickled inside her."
+  end
+end
+
 class FoodChain
   def self.song
   end
@@ -55,11 +69,11 @@ class FoodChain
 
   def self.bird
     [
-      "I know an old lady who swallowed a bird.",
-      "How absurd to swallow a bird!",
-      "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.",
-      "She swallowed the spider to catch the fly.",
-      "I don't know why she swallowed the fly. Perhaps she'll die."
+      Bird.intro,
+      Bird.remark,
+      Bird.swallow_what_now,
+      Spider.swallow_what_now,
+      Bird.outro
     ]
   end
 
