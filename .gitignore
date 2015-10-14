@@ -1,0 +1,2 @@
+#Ignore details of what files are open in Sublime's workspace
+*.sublime-workspace
