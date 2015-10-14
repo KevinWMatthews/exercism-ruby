@@ -1,6 +1,26 @@
-class Fly
+class Animal
+  def self.outro
+    "I don't know why she swallowed the fly. Perhaps she'll die."
+  end
+end
+
+class Fly < Animal
   def self.swallow
     "I know an old lady who swallowed a fly."
+  end
+end
+
+class Spider < Animal
+  def self.swallow
+    "I know an old lady who swallowed a spider."
+  end
+
+  def self.remark
+    "It wriggled and jiggled and tickled inside her."
+  end
+
+  def self.chase
+    "She swallowed the spider to catch the fly."
   end
 end
 
@@ -8,23 +28,19 @@ class FoodChain
   def self.song
   end
 
-  def self.outro
-    "I don't know why she swallowed the fly. Perhaps she'll die."
-  end
-
   def self.fly
     [
       Fly.swallow,
-      self.outro
+      Fly.outro
     ]
   end
 
   def self.spider
     [
-      "I know an old lady who swallowed a spider.",
-      "It wriggled and jiggled and tickled inside her.",
-      "She swallowed the spider to catch the fly.",
-      "I don't know why she swallowed the fly. Perhaps she'll die."
+      Spider.swallow,
+      Spider.remark,
+      Spider.chase,
+      Spider.outro
     ]
   end
 
