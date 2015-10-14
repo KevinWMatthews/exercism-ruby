@@ -1,11 +1,21 @@
+class Fly
+  def self.swallow
+    "I know an old lady who swallowed a fly."
+  end
+end
+
 class FoodChain
   def self.song
   end
 
+  def self.outro
+    "I don't know why she swallowed the fly. Perhaps she'll die."
+  end
+
   def self.fly
     [
-      "I know an old lady who swallowed a fly.",
-      "I don't know why she swallowed the fly. Perhaps she'll die."
+      Fly.swallow,
+      self.outro
     ]
   end
 
